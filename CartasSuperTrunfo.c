@@ -1,22 +1,54 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
+typedef struct {
+    char estado[3];
+    char codigo[10];
+    char nomeCidade[100];
+    int populacao;
+    float area; // km²
+    float pib;  // bilhões de reais
+    int pontosTuristicos;
+} Carta;
+
+void exibirCarta(Carta carta) {
+    printf("Estado: %s\n", carta.estado);
+    printf("Código: %s\n", carta.codigo);
+    printf("Cidade: %s\n", carta.nomeCidade);
+    printf("População: %d\n", carta.populacao);
+    printf("Área: %.2f km²\n", carta.area);
+    printf("PIB: %.2f bilhões de reais\n", carta.pib);
+    printf("Pontos Turísticos: %d\n", carta.pontosTuristicos);
+    printf("-----------------------------\n");
+}
 
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    // Carta 1
+    Carta carta1 = {
+        "A",
+        "A01",
+        "São Paulo",
+        12325000,
+        1521.11,
+        699.28,
+        50
+    };
+
+    // Carta 2
+    Carta carta2 = {
+        "B",
+        "B02",
+        "Rio de Janeiro",
+        6748000,
+        1200.25,
+        300.50,
+        30
+    };
+
+    printf("Carta 1:\n");
+    exibirCarta(carta1);
+
+    printf("Carta 2:\n");
+    exibirCarta(carta2);
 
     return 0;
 }
